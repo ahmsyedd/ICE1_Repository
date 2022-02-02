@@ -5,16 +5,15 @@
  */
 package cardtrickice1;
 import java.util.Scanner;
-/** step1 : generate 7 random cards and store in array - how
- * step 2: take any card input from user suit,number
- * step 3: user card is in  the array 'card is found'
- *
+/** 
+ * @modifier Syed Dawood Ahmed
+ * @studentId 991648160
  * @author sivagamasrinivasan
  */
 public class CardTrickICE1 {
 
     /**
-     * branch
+     * 
      * @param args the command line arguments
      */
     public static void main(String[] args) 
@@ -35,10 +34,23 @@ public class CardTrickICE1 {
         System.out.println("Enter the Rank number of the card:");
         int userValue = input.nextInt();
         
+        System.out.println("Your Entered Card Suit is "+ userSuit + " and Card Number is "+ userValue);
+
+        //step 3: match with array
+        int matched = 0;
+        for(int i=0; i<magicHand.length;i++)
+        {
+            if(userSuit.equalsIgnoreCase(magicHand[i].getSuits()) && userValue==magicHand[i].getValue()) {
+                System.out.println("Congratulations!! Your card is found.");
+                matched = 1;
+                break;
+            }
+        }
         
-        
-        
-        //step 3: match with array 
+        if(matched == 0) {
+            System.out.println("Try again! Your card was not found");
+        }
+    
     }
     
 }

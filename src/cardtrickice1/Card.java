@@ -9,8 +9,9 @@ import java.util.Random;
 /**
  * define card value and suits
  *
- * @author Syed Dawood Ahmed
- * @StudentId 991648160
+ * @modifier Syed Dawood Ahmed
+ * @studentId 991648160
+ * @author sivagamasrinivasan
  */
 public class Card {
 
@@ -58,15 +59,4 @@ public class Card {
     int index = rand.nextInt(SUITS.length);
     return SUITS[index]; 
     }
-    
-    public Card(){
-        value = 0;
-        suits = null;
-    }
-    
-    public Card(int value, String suits) {
-        setValue(value);
-        setSuits(suits);
-    }
-    
 }
