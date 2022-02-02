@@ -4,18 +4,20 @@
  * and open the template in the editor.
  */
 package cardtrickice1;
+import java.util.Random;
 
-/** define card value and suits
- * 
+/**
+ * define card value and suits
  *
- * @author sivagamasrinivasan
+ * @author Syed Dawood Ahmed
+ * @StudentId 991648160
  */
-public class Card 
-{
+public class Card {
+
     private int value;
     private String suits; //encapsulation
     //constant
-    public static final String [] SUITS = { "diamonds","clubs","spades","hearts"};
+    public static final String[] SUITS = {"diamonds", "clubs", "spades", "hearts"};
 
     /**
      * @return the value
@@ -44,8 +46,27 @@ public class Card
     public void setSuits(String suits) {
         this.suits = suits;
     }
-   //number
     
-    //method for suits
+    //Method to Generate Random Number from 1 to 13.
+    Random rand = new Random();
+    public int randomNum() {
+        return rand.nextInt(13) + 1;
+    }
+    
+    //Method to select rendom suits
+    public String randomSuits(){
+    int index = rand.nextInt(SUITS.length);
+    return SUITS[index]; 
+    }
+    
+    public Card(){
+        value = 0;
+        suits = null;
+    }
+    
+    public Card(int value, String suits) {
+        setValue(value);
+        setSuits(suits);
+    }
     
 }
